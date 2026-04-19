@@ -7,13 +7,12 @@ const Experience = () => {
     {
       company: "Baraka FinTech Limited",
       position: "Software Engineer",
-      duration: "01 July, 2024 - 31 January, 2026",
+      duration: "01 July, 2024 - Present",
       location: "On-Site",
       description: [
-        "Frontend system design and implementation for web applications.",
-        "Integrated REST APIs to connect frontend with backend services.",
-        "Developed responsive & user-friendly UI/UX components.",
-        "Optimized frontend performance & ensured cross-device compatibility.",
+        "Designed & developed scalable frontend architecture for web applications ensuring smooth user experience.",
+        "Integrated backend services with frontend systems to enable efficient & reliable data flow across the application.",
+        "Built responsive & user-friendly interfaces while optimizing performance & ensuring cross-device compatibility.",
       ],
       technologies: [
         "React.js",
@@ -30,8 +29,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50 to-violet-50"
-    >
+      className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50 to-violet-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -42,18 +40,14 @@ const Experience = () => {
               Work Experience
             </h2>
           </div>
-          <div className="w-20 h-1 bg-gradient-to-r from-violet-500 to-purple-600 mx-auto rounded-full mb-4"></div>
-          <p className="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">
-            Professional journey in software development and engineering
-          </p>
+          <div className="w-20 h-1 bg-gradient-to-r from-violet-500 to-purple-600 mx-auto rounded-full"></div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-3">
           {experiences.map((exp, index) => (
             <Card
               key={index}
-              className="hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg bg-gradient-to-br from-white via-slate-50/50 to-violet-50/30 backdrop-blur-sm rounded-2xl"
-            >
+              className="hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg bg-gradient-to-br from-white via-slate-50/50 to-violet-50/30 backdrop-blur-sm rounded-2xl">
               <CardHeader className="pb-4 px-4 sm:px-6">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                   <div className="space-y-3">
@@ -79,8 +73,7 @@ const Experience = () => {
                       </div>
                       <Badge
                         variant="outline"
-                        className="border-emerald-300 text-emerald-700 bg-emerald-50 font-medium"
-                      >
+                        className="border-emerald-300 text-emerald-700 bg-emerald-50 font-medium">
                         {exp.type}
                       </Badge>
                     </div>
@@ -97,8 +90,7 @@ const Experience = () => {
                       {exp.description.map((item, idx) => (
                         <li
                           key={idx}
-                          className="flex items-start gap-2 text-slate-700"
-                        >
+                          className="flex items-start gap-2 text-slate-700">
                           <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                           <span>{item}</span>
                         </li>
@@ -115,8 +107,7 @@ const Experience = () => {
                         <Badge
                           key={techIndex}
                           variant="outline"
-                          className="border-violet-200 text-violet-700 hover:bg-violet-50 transition-colors bg-violet-50/50 font-medium"
-                        >
+                          className="border-violet-200 text-violet-700 hover:bg-violet-50 transition-colors bg-violet-50/50 font-medium">
                           {tech}
                         </Badge>
                       ))}

@@ -1,5 +1,4 @@
 import { Briefcase, Coffee, ExternalLink, Sprout } from "lucide-react";
-import Badge from "./ui/Badge";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/Card";
 
 const Projects = () => {
@@ -10,22 +9,21 @@ const Projects = () => {
       description:
         "A full-stack restaurant management system allowing customers to browse menus, place orders, and submit reviews, while admins manage food items, categories, orders, and reviews.",
       features: [
-        "Modern, responsive UI with mobile-first design",
-        "Food browsing by category with ratings and reviews",
-        "Shopping cart and order placement",
-        "Admin dashboard with CRUD for foods and categories",
-        "JWT authentication and role-based access",
-        "Image uploads with Cloudinary",
+        "Modern responsive UI",
+        "Category-based food browsing",
+        "Cart & order system",
+        "Admin dashboard (CRUD)",
+        "JWT authentication",
+        "Cloudinary image upload",
       ],
       technologies: [
         "Next.js",
-        "React ",
+        "React",
         "TypeScript",
         "Tailwind CSS",
         "React Query",
-        "MongoDB + Mongoose",
+        "MongoDB",
         "Cloudinary",
-        "JWT + bcrypt",
       ],
       icon: Coffee,
       link: "https://zuimi-restaurant.vercel.app",
@@ -35,24 +33,22 @@ const Projects = () => {
       id: 2,
       title: "RBAC Project Manager",
       description:
-        "Frontend application for a role-based project management system with invitation-only user onboarding, connecting to a backend API for authentication and project/user management.",
+        "Role-based project management system with invitation-only onboarding and full admin control over users and projects.",
       features: [
-        "Invite-based registration flow",
-        "JWT authentication and role-based UI",
-        "User management for admins (invite, role changes, activate/deactivate)",
-        "Project management with create, edit, soft delete",
-        "Protected routes with loading and error states",
+        "Invite-based system",
+        "Role-based access control",
+        "User management",
+        "Project CRUD",
+        "Protected routes",
         "Optimistic UI updates",
       ],
       technologies: [
         "React",
         "TypeScript",
         "Context API",
-        "React Router DOM",
-        "Axios",
+        "React Router",
         "React Query",
-        "js-cookie",
-        "React Toastify",
+        "Axios",
       ],
       icon: Briefcase,
       link: "https://rbac-project-manager-frontend.vercel.app",
@@ -62,21 +58,20 @@ const Projects = () => {
       id: 3,
       title: "Farmers Market",
       description:
-        "A farmer support platform providing auction, help center, donations, investment, and microcredit services with a responsive and interactive user experience.",
+        "A farmer support platform with auction, donations, investment and microcredit system.",
       features: [
-        "Farmer product auction system",
-        "Help Center for farmer support",
-        "Donation and investment modules",
-        "Microcredit services for farmers",
-        "Responsive and interactive UI",
-        "Form handling with validation",
+        "Auction system",
+        "Donation module",
+        "Investment system",
+        "Microcredit service",
+        "Responsive UI",
+        "Form validation",
       ],
       technologies: [
         "Next.js",
         "TypeScript",
         "Tailwind CSS",
         "Zustand",
-        "TanStack Query",
         "React Hook Form",
       ],
       icon: Sprout,
@@ -86,105 +81,91 @@ const Projects = () => {
   ];
 
   const colorMap: Record<string, string> = {
-    red: "from-red-500 to-red-600",
-    blue: "from-blue-500 to-blue-600",
-    green: "from-green-500 to-green-600",
+    red: "from-red-500 to-rose-500",
+    blue: "from-blue-500 to-indigo-500",
+    green: "from-green-500 to-emerald-500",
   };
 
   return (
-    <section className="py-8 px-6 bg-gray-50">
+    <section className="py-16 px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-              My Projects
-            </h2>
-          </div>
-          <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-green-500 to-blue-500"></div>
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+            My Projects
+          </h2>
+          <div className="w-28 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-green-400 to-blue-500" />
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project) => (
             <Card
               key={project.id}
-              className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 bg-white rounded-xl"
-            >
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between">
-                  {/* Icon + Title */}
-                  <div className="flex items-center gap-4">
+              className="group relative border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 rounded-2xl overflow-hidden bg-white">
+              {/* Top gradient bar */}
+              <div
+                className={`h-1 w-full bg-gradient-to-r ${colorMap[project.color]}`}
+              />
+
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-3">
                     <div
-                      className={`w-14 h-14 bg-gradient-to-br ${
+                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${
                         colorMap[project.color]
-                      } rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform duration-300`}
-                    >
-                      <project.icon className="w-7 h-7 text-white drop-shadow-sm" />
+                      } flex items-center justify-center text-white shadow-md`}>
+                      <project.icon className="w-6 h-6" />
                     </div>
-                    <CardTitle
-                      className={`text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
-                        project.color === "red"
-                          ? "from-red-600 to-pink-500"
-                          : project.color === "blue"
-                          ? "from-blue-600 to-indigo-500"
-                          : "from-green-600 to-teal-500"
-                      }`}
-                    >
+
+                    <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-black transition">
                       {project.title}
                     </CardTitle>
                   </div>
-                  {/* External Link */}
+
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors"
-                  >
+                    className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition">
                     <ExternalLink className="w-5 h-5 text-gray-700" />
                   </a>
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-6">
-                {/* Description */}
-                <p className="text-gray-700 leading-relaxed">
+              <CardContent className="space-y-5">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Features */}
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <div className="w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
-                    Key Features:
-                  </h4>
-                  <ul className="space-y-2">
-                    {project.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start gap-3 text-sm text-gray-700 p-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
-                      >
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Technologies */}
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
-                    Technologies Used:
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                    Key Features
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, index) => (
-                      <Badge
-                        key={index}
-                        className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-0 hover:from-blue-200 hover:to-purple-200 transform hover:scale-105 transition-all duration-200"
-                      >
-                        {tech}
-                      </Badge>
+                    {project.features.map((f, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tech */}
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                    Tech Stack
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((t, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition">
+                        {t}
+                      </span>
                     ))}
                   </div>
                 </div>

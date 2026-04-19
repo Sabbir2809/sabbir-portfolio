@@ -21,14 +21,14 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+8801829723692",
+      value: "+88 01829723692",
       color: "from-emerald-500 to-teal-500",
       bgColor: "bg-emerald-50",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Hemayetpur, Savar, Dhaka",
+      value: "Dhaka, Bangladesh",
       color: "from-blue-500 to-indigo-500",
       bgColor: "bg-emerald-50",
     },
@@ -64,12 +64,10 @@ const Contact = () => {
           {contactMethods.map((method, index) => (
             <Card
               key={index}
-              className={`text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg ${method.bgColor}/50 backdrop-blur-sm rounded-2xl`}
-            >
+              className={`text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg ${method.bgColor}/50 backdrop-blur-sm rounded-2xl`}>
               <CardHeader className="pb-4 px-4">
                 <div
-                  className={`mx-auto w-16 h-16 bg-gradient-to-br ${method.color} rounded flex items-center justify-center mb-3 shadow-lg`}
-                >
+                  className={`mx-auto w-16 h-16 bg-gradient-to-br ${method.color} rounded flex items-center justify-center mb-3 shadow-lg`}>
                   <method.icon className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-lg font-bold text-slate-800">
@@ -83,24 +81,21 @@ const Contact = () => {
                       href="https://www.linkedin.com/in/sabbir2809"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-blue-100 rounded flex items-center justify-center hover:bg-blue-200 transition-all hover:scale-110 shadow-md"
-                    >
+                      className="w-10 h-10 bg-blue-100 rounded flex items-center justify-center hover:bg-blue-200 transition-all hover:scale-110 shadow-md">
                       <Linkedin className="w-5 h-5 text-blue-600" />
                     </a>
                     <a
                       href="https://github.com/Sabbir2809"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-slate-100 rounded flex items-center justify-center hover:bg-slate-200 transition-all hover:scale-110 shadow-md"
-                    >
+                      className="w-10 h-10 bg-slate-100 rounded flex items-center justify-center hover:bg-slate-200 transition-all hover:scale-110 shadow-md">
                       <Github className="w-5 h-5 text-slate-700" />
                     </a>
                     <a
                       href="https://facebook.com/Sabbir2809"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-blue-100 rounded flex items-center justify-center hover:bg-blue-200 transition-all hover:scale-110 shadow-md"
-                    >
+                      className="w-10 h-10 bg-blue-100 rounded flex items-center justify-center hover:bg-blue-200 transition-all hover:scale-110 shadow-md">
                       <Facebook className="w-5 h-5 text-blue-700" />
                     </a>
                   </div>

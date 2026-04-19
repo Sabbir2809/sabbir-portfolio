@@ -1,10 +1,12 @@
-import { Code, Database, Palette, Server, Settings } from "lucide-react";
+import { Cloud, Code, Database, Palette, Server, Settings } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/Card";
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
+      icon: Code,
+      color: "from-yellow-400 to-orange-500",
       skills: [
         {
           name: "JavaScript",
@@ -19,24 +21,25 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
         },
       ],
-      icon: Code,
-      color: "from-yellow-500 to-orange-500",
     },
+
     {
       title: "Frontend Development",
+      icon: Palette,
+      color: "from-blue-400 to-cyan-500",
       skills: [
         {
-          name: "React JS",
+          name: "React.js",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
         },
         {
-          name: "Redux",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+          name: "Next.js",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+          bg: "bg-white p-1 rounded",
         },
         {
-          name: "Next JS",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-          bg: "bg-white p-1 rounded", // fix visibility
+          name: "Redux Toolkit",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
         },
         {
           name: "HTML5",
@@ -51,31 +54,49 @@ const Skills = () => {
           logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
         },
         {
+          name: "Ant Design",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/antdesign/antdesign-original.svg",
+        },
+        {
           name: "Material UI",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
         },
       ],
-      icon: Palette,
-      color: "from-blue-500 to-cyan-500",
     },
+
     {
       title: "Backend Development",
+      icon: Server,
+      color: "from-green-400 to-emerald-500",
       skills: [
         {
-          name: "Node JS",
+          name: "Node.js",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
         },
         {
-          name: "Express JS",
+          name: "Express.js",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-          bg: "bg-white p-1 rounded", // fix dark icon
+          bg: "bg-white p-1 rounded",
+        },
+        {
+          name: "REST APIs",
+          logo: "https://cdn-icons-png.flaticon.com/512/2164/2164832.png",
+        },
+        {
+          name: "CORS",
+          logo: "https://cdn-icons-png.flaticon.com/512/2091/2091665.png",
+        },
+        {
+          name: "JWT Authentication",
+          logo: "https://jwt.io/img/pic_logo.svg",
         },
       ],
-      icon: Server,
-      color: "from-green-500 to-emerald-500",
     },
+
     {
-      title: "Database & ORM",
+      title: "Databases & ORM",
+      icon: Database,
+      color: "from-purple-400 to-violet-500",
       skills: [
         {
           name: "MongoDB",
@@ -94,11 +115,49 @@ const Skills = () => {
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
         },
       ],
-      icon: Database,
-      color: "from-purple-500 to-violet-500",
     },
+
     {
-      title: "Tools & Platforms",
+      title: "Cloud & DevOps",
+      icon: Cloud,
+      color: "from-indigo-400 to-blue-500",
+      skills: [
+        {
+          name: "Linux",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+        },
+        {
+          name: "Docker",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+        },
+        {
+          name: "AWS",
+          logo: "https://cdn.worldvectorlogo.com/logos/aws-2.svg",
+        },
+        {
+          name: "NGINX",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
+        },
+        {
+          name: "GitHub Actions",
+          logo: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/githubactions.svg",
+        },
+        {
+          name: "Vercel",
+          logo: "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
+          bg: "bg-white p-1 rounded",
+        },
+        {
+          name: "Netlify",
+          logo: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
+        },
+      ],
+    },
+
+    {
+      title: "Developer Tools",
+      icon: Settings,
+      color: "from-pink-400 to-rose-500",
       skills: [
         {
           name: "Git",
@@ -118,72 +177,85 @@ const Skills = () => {
           logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
         },
         {
+          name: "Swagger",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+        },
+        {
           name: "Figma",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
         },
-        {
-          name: "Vercel",
-          logo: "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
-          bg: "bg-white p-1 rounded",
-        },
-        {
-          name: "Netlify",
-          logo: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-        },
-        {
-          name: "Docker",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-        },
       ],
-      icon: Settings,
-      color: "from-indigo-500 to-blue-500",
     },
   ];
 
   return (
-    <section className="py-14 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-20 px-4 overflow-hidden bg-[#0b0f1a] text-white">
+      {/* Floating Glow Blobs */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-400/30 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/30 blur-3xl rounded-full"></div>
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-400/20 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+
+      <div className="relative max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent">
+        <div className="text-center mb-14">
+          <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-300 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Technical Skills
           </h2>
-          <p className="text-gray-400 mt-2">Technologies I work with</p>
         </div>
 
-        {/* Categories */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {/* Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, i) => (
             <Card
               key={i}
-              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl hover:scale-105 transition">
-              <CardHeader className="text-center">
+              className="
+                relative overflow-hidden
+                bg-white/10 backdrop-blur-xl
+                border border-white/20
+                rounded-3xl
+                shadow-[0_8px_30px_rgb(0,0,0,0.3)]
+                hover:scale-[1.03]
+                transition duration-300
+              ">
+              {/* Glass shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
+
+              <CardHeader className="text-center relative">
                 <div
-                  className={`w-14 h-14 mx-auto bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center mb-3`}>
+                  className={`w-16 h-16 mx-auto bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mb-3 shadow-lg`}>
                   <category.icon className="text-white" />
                 </div>
-                <CardTitle>{category.title}</CardTitle>
+
+                <CardTitle className="text-white text-lg">
+                  {category.title}
+                </CardTitle>
               </CardHeader>
 
-              <CardContent>
-                <div className="grid grid-cols-3 gap-4">
+              <CardContent className="relative">
+                <div className="grid grid-cols-3 gap-5">
                   {category.skills.map((skill, index) => (
                     <div
                       key={index}
                       className="flex flex-col items-center gap-2 group">
-                      {/* Icon */}
                       <div
-                        className="w-14 h-14 flex items-center justify-center 
-                      bg-white/10 rounded-xl backdrop-blur
-                      group-hover:scale-110 transition">
+                        className="
+                        w-14 h-14
+                        flex items-center justify-center
+                        bg-white/10 backdrop-blur-md
+                        border border-white/20
+                        rounded-2xl
+                        group-hover:bg-white/20
+                        transition
+                      ">
                         <img
                           src={skill.logo}
                           alt={skill.name}
+                          loading="lazy"
+                          decoding="async"
                           className={`w-8 h-8 object-contain ${skill.bg || ""}`}
                         />
                       </div>
 
-                      {/* Name */}
                       <p className="text-xs text-gray-300 text-center">
                         {skill.name}
                       </p>
