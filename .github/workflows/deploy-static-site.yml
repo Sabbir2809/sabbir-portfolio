@@ -1,0 +1,34 @@
+name: Deploy Static Site
+
+on:
+  push:
+    branches:
+      - "dis-build"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Setup GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 3. Upload files
+      - name: Upload site files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      # 4. Deploy
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # 5. Show deploy link
+      - name: Show Deployment URL
+        run: echo "🚀 Live Site - ${{ steps.deployment.outputs.page_url }}"
